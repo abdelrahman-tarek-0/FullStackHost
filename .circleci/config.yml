@@ -1,0 +1,56 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+  aws-cli: circleci/aws-cli@2.0.6
+  eb: circleci/aws-elastic-beanstalk@2.0.1
+  browser-tools: circleci/browser-tools@1.2.2
+jobs:
+  build:
+    executor: aws-cli/default
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install:
+          install-yarn: false
+          node-version: '14.17.6'
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - checkout
+      - aws-cli/setup
+      - eb/setup
+      - run:
+          name: Back-End Install
+          command: |
+            npm run install:API
+      - run:
+          name: Back-End Build
+          command: |
+            npm run build:API
+      - run:
+          name: Back-End deploy
+          command: |
+            npm run deploy:API
+      - run:
+          name: Front-End Install
+          command: |
+            npm run install:Frontend
+      - run:
+          name: Front-End test
+          command: |
+            npm run test:Frontend
+      - run:
+          name: Front-End Build
+          command: |
+            npm run build:Frontend
+      - run:
+          name: Deploy App
+          command: |
+            npm run deploy:Frontend
+
+workflows:
+  pipeline:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master

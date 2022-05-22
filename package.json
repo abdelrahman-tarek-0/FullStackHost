@@ -1,0 +1,17 @@
+{
+  "name": "hosting-a-full-stack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install:API": "cd udagram-api-ready && npm install",
+    "build:API": "cd udagram-api-ready && npm run build",
+    "deploy:API": "cd udagram-api-ready && npm run deploy",
+    "install:Frontend": "cd udagram-frontend-ready && npm install",
+    "test:Frontend": "cd udagram-frontend-ready && npm run test",
+    "e2e:Frontend": "cd udagram-frontend-ready && npm run e2e",
+    "build:Frontend": "cd udagram-frontend-ready && npm run build",
+    "deploy:Frontend": "cd udagram-frontend-ready && npm run deploy"
+  },
+  "keywords": []
+}
