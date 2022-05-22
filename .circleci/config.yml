@@ -31,9 +31,9 @@ jobs:
           command: |
             npm run deploy:API
       - run:
-          name: Front-End Install --force
+          name: Front-End Install
           command: |
-            npm run install:Frontend
+            npm run install:Frontend --force
       - run:
           name: Front-End test
           command: |
