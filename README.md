@@ -4,8 +4,7 @@
 <a href="/Documentation/">Docs</a>
 
 ## URL
-* App url: http://udagram-frontend-clean.s3-website-us-east-1.amazonaws.com/home
-
+* App url: http://udagram-frontend-clean.s3-website-us-east-1.amazonaws.com/
 
 ## App Health
 
