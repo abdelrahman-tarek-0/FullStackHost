@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "https://github.com/udacity",
   "scripts": {
     "install:API": "cd udagram-api-ready && npm install",
     "build:API": "cd udagram-api-ready && npm run build",
